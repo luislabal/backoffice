@@ -28,7 +28,6 @@ body {
 h1 {
     margin-top: 0;
     text-align: center;
-    text-shadow: 3px 3px;
 }
 
 label {
@@ -74,3 +73,72 @@ a {
     text-decoration: none;
 }
 
+/* ---------- Home ---------- */
+
+.caja-home {
+    max-width: 1100px;
+}
+
+.acciones {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.acciones button {
+    flex: 1;
+    font-size: 1rem;
+}
+
+#formProyecto {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 3px solid black;
+}
+
+#formProyecto h2 {
+    margin-top: 0;
+}
+
+#formProyecto button {
+    margin-bottom: 0.5rem;
+}
+
+/* Panel horizontal */
+#panel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.proyecto {
+    flex: 0 0 260px;
+    padding: 1rem;
+    background-color: rgb(216, 123, 123);
+    border: 3px solid black;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.proyecto h3 {
+    margin-top: 0;
+    word-break: break-word;
+}
+
+.proyecto p {
+    word-break: break-word;
+}
+
+.proyecto a {
+    display: block;
+    margin-bottom: 1rem;
+    color: black;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
+.proyecto button {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}

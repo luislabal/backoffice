@@ -4,8 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="auth.js"></script>
+    <script>requireAuth();</script>
 </head>
 <body>
-    <h1>hola este es el inicio</h1>
+    <main class="caja caja-home">
+    <h1>Mis proyectos</h1>
+
+    <div class="acciones">
+        <button id="btnAgregar">Agregar proyecto</button>
+        <button id="btnSalir">Cerrar sesion</button>
+    </div>
+
+    <form id="formProyecto" hidden>
+        <h2 id="tituloForm">Nuevo proyecto</h2>
+
+        <label for="titulo">Titulo</label>
+        <input type="text" id="titulo" required>
+
+        <label for="descripcion">Descripcion</label>
+        <input type="text" id="descripcion" required>
+
+        <label for="tecnologias">Tecnologias</label>
+        <input type="text" id="tecnologias">
+
+        <label for="repositorio">Repositorio</label>
+        <input type="url" id="repositorio">
+
+        <button type="submit">Guardar</button>
+        <button type="button" id="btnCancelar">Cancelar</button>
+    </form>
+
+    <section id="panel"></section>
+    </main>
+
+    <script src="home.js"></script>
 </body>
 </html>
