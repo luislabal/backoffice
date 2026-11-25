@@ -7,7 +7,7 @@ form.addEventListener("submit", async (e) => {
     const password = document.getElementById("clave").value;
 
     try {
-        const res = await fetch(`${API_BASE}/auth/login`, {
+        const res = await fetch(`${API}/auth/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, password })

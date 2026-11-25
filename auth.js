@@ -1,4 +1,4 @@
-const API_BASE = "https://portfolio-api-three-black.vercel.app/api/v1";
+const API = "https://portfolio-api-three-black.vercel.app/api/v1";
 
 function getToken() {
     return localStorage.getItem("authToken");

@@ -25,6 +25,7 @@ document.getElementById("btnAgregar").addEventListener("click", () => {
 document.getElementById("btnCancelar").addEventListener("click", cerrarForm);
 
 function abrirForm(proyecto) {
+    
     editandoId = proyecto ? proyecto._id : null;
     tituloForm.textContent = proyecto ? "Actualizar proyecto" : "Nuevo proyecto";
     document.getElementById("titulo").value = proyecto ? proyecto.title : "";
@@ -42,11 +43,11 @@ function cerrarForm() {
 
 async function cargarProyectos() {
     try {
-        const res = await fetch(`${API_BASE}/projects`, {
+        const res = await fetch(`${API}/projects`, {
             headers: { "auth-token": getToken() }
         });
         if (res.status === 401 || res.status === 403) {
-            alert("Sesion invalida (" + res.status + "), inicia sesion de nuevo");
+            alert("Sesion invalida (" + res.status + "), inicia sesion otra vez");
             logout();
             return;
         }
@@ -126,14 +127,14 @@ form.addEventListener("submit", async (e) => {
     try {
         let res;
         if (editandoId) {
-            res = await fetch(`${API_BASE}/projects/${editandoId}`, {
+            res = await fetch(`${API}/projects/${editandoId}`, {
                 method: "PUT",
                 headers,
                 body: JSON.stringify(proyecto)
             });
         } else {
             proyecto.userId = obtenerUserId();
-            res = await fetch(`${API_BASE}/projects`, {
+            res = await fetch(`${API}/projects`, {
                 method: "POST",
                 headers,
                 body: JSON.stringify(proyecto)
@@ -157,7 +158,7 @@ async function eliminarProyecto(id) {
     if (!confirm("¿Eliminar este proyecto?")) return;
 
     try {
-        const res = await fetch(`${API_BASE}/projects/${id}`, {
+        const res = await fetch(`${API}/projects/${id}`, {
             method: "DELETE",
             headers: { "auth-token": getToken() }
         });
