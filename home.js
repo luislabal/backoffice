@@ -45,7 +45,6 @@ async function cargarProyectos() {
         const res = await fetch(`${API_BASE}/projects`, {
             headers: { "auth-token": getToken() }
         });
-        // Token invalido o vencido
         if (res.status === 401 || res.status === 403) {
             alert("Sesion invalida (" + res.status + "), inicia sesion de nuevo");
             logout();
