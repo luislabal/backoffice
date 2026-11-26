@@ -6,12 +6,12 @@ function getToken() {
 
 function requireAuth() {
     if (!getToken()) {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     }
 }
 
 function logout() {
     localStorage.removeItem("authToken");
     localStorage.removeItem("userId");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }

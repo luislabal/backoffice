@@ -20,7 +20,7 @@ form.addEventListener("submit", async (e) => {
         if (!res.ok) throw new Error(data.message || "No se pudo registrar");
 
         alert("Cuenta creada!");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     } catch (err) {
         alert(err.message);
     }
